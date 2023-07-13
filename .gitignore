@@ -1,0 +1,6 @@
+# Intellij IDEA Directories & Files
+.idea
+*.iml
+
+# Dependency directories
+node_modules
