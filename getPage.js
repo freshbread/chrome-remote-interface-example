@@ -27,6 +27,10 @@ const url = process.argv[2]; // 인덱스 2의 인수를 url 변수에 할당합
     const documentNodeId = (await DOM.getDocument()).root.nodeId;
     const html = (await DOM.getOuterHTML({ nodeId: documentNodeId })).outerHTML;
 
+    // // 페이지 소스를 파일로 저장합니다.
+    // fs.writeFileSync(outputFilePath, html);
+    //
+    // console.log(`페이지 소스가 ${outputFilePath} 파일로 저장되었습니다.`);
     console.log(html);
 
     // 연결을 종료합니다.
