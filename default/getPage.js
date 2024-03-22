@@ -1,12 +1,12 @@
 const CDP = require('chrome-remote-interface');
-const fs = require('fs');
 
-const url = process.argv[2]; // 인덱스 2의 인수를 url 변수에 할당합니다.
-// const outputFilePath = process.argv[3]; // 저장할 파일 경로와 이름을 지정합니다.
+const port = process.argv[2];
+const url = process.argv[3]; // 인덱스 2의 인수를 url 변수에 할당합니다.
+// const outputFilePath = process.argv[4]; // 저장할 파일 경로와 이름을 지정합니다.
 
 (async function() {
     // Chrome에 원격으로 연결합니다.
-    const client = await CDP();
+    const client = await CDP({ port });
 
     // 디버그 타겟 목록을 가져옵니다.
     const { Target, Page } = client;
